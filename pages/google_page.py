@@ -10,5 +10,13 @@ class GooglePage(BasePage):
         '''
         Locates the search button and returns it.
         '''
-        locator = (By.XPATH, '/html[1]/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[3]/center[1]/input[1]')
+        locator = (By.XPATH, '//body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[2]/div[2]/div[2]/center[1]/input[1]')
+        return BaseElement(driver = self.driver, by = locator[0], value=locator[1])
+    
+    @property
+    def search_field(self):
+        '''
+        Locates the search text field and returns it.
+        '''
+        locator = (By.XPATH, '//body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/input[1]')
         return BaseElement(driver = self.driver, by = locator[0], value=locator[1])
